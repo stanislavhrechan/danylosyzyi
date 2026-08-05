@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Doto, Space_Mono, Syne } from "next/font/google";
 import "./globals.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import SmoothScroll from "./components/SmoothScroll";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const doto = Doto({
   subsets: ["latin"],
+  variable: "--font-doto",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const spaceMono = Space_Mono({
   subsets: ["latin"],
+  variable: "--font-space-mono",
+  weight: ["400", "700"],
+});
+
+const syne = Syne({
+  subsets: ["latin"],
+  variable: "--font-syne",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -25,9 +35,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${doto.variable} ${spaceMono.variable} ${syne.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Header></Header>
+        <SmoothScroll>
+        <main className="relative z-40 bg-white">
+        {children}
+        </main>
+        </SmoothScroll>
+        <Footer></Footer>
+        </body>
     </html>
   );
 }

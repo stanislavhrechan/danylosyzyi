@@ -5,111 +5,179 @@ import Image from "next/image";
 const projects = [
     {
         id: 1,
-        title: "Tesla in Blender",
-        category: "University",
-        year: 2024,
-        image: "/images/projects/tesla.jpg",
+        position: "left",
     },
     {
         id: 2,
-        title: "Mixbox",
-        category: "University",
-        year: 2024,
-        image: "/images/projects/mixbox.jpg",
+        type: "video",
+        position: "center",
     },
     {
         id: 3,
-        title: "Corrib",
-        category: "Client",
-        year: 2025,
-        image: "/images/projects/corrib.jpg",
+        type: "image",
+        position: "top-right",
     },
     {
         id: 4,
-        title: "Dom Služieb",
-        category: "Client",
-        year: 2025,
-        image: "/images/projects/dom.jpg",
+        type: "image",
+        src: "/images/portfolio/photo_1.jpg",
+        position: "right",
     },
     {
         id: 5,
-        title: "Slovak.Me",
-        category: "Lab",
-        year: 2026,
-        image: "/images/projects/slovakme.jpg",
+        position: "bottom-left",
     },
     {
         id: 6,
-        title: "Mirai Cache",
-        category: "Lab",
-        year: 2026,
-        image: "/images/projects/mirai.jpg",
+        position: "bottom-right",
     },
 ];
 
-const layout = [
-    { col: "col-span-7", height: "h-[720px]" },
-    { col: "col-span-5", height: "h-[460px] mt-24" },
+const positions = {
+    left: `
+        left-[10%]
+        top-[250px]
+        w-[285px]
+        h-[210px]
+    `,
 
-    { col: "col-span-5", height: "h-[460px]" },
-    { col: "col-span-7", height: "h-[720px] mt-24" },
+    center: `
+        left-[28%]
+        top-[565px]
+        w-[320px]
+        h-[450px]
+    `,
 
-    { col: "col-span-7", height: "h-[720px]" },
-    { col: "col-span-5", height: "h-[460px] mt-24" },
-];
+    "top-right": `
+        right-[28%]
+        top-[65px]
+        w-[385px]
+        h-[285px]
+    `,
+
+    right: `
+        right-[0%]
+        top-[390px]
+        w-[340px]
+        h-[525px]
+    `,
+
+    "bottom-left": `
+        left-[0%]
+        top-[850px]
+        w-[330px]
+        h-[530px]
+    `,
+
+    "bottom-right": `
+        right-[20%]
+        top-[1120px]
+        w-[250px]
+        h-[250px]
+    `,
+};
 export default function AllProjects() {
     return(
         <>
-            <section className="px-5 mb-10">
-                <div className="flex justify-between">
-                    <div className="flex gap-1 text-sm">
-                        <div className="bg-black px-4 py-1 rounded text-white">All</div>
-                        <div className="bg-gray-100 px-4 py-1 rounded">Client</div>
-                        <div className="bg-gray-100 px-4 py-1 rounded">Lab</div>
-                        <div className="bg-gray-100 px-4 py-1 rounded">University</div>
-                    </div>
-                    <div className="flex gap-1 text-sm">
-                        <div className="bg-black px-4 py-1 rounded text-white">List</div>
-                        <div className="bg-gray-100 px-4 py-1 rounded">Grid</div>
-                    </div>
+            <section className="relative">
+                <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
+                    <img
+                        src="/images/logo.svg"
+                        alt=""
+                        className="w-63 hover:scale-110 transition-transform duration-250 z-30"
+                    />
                 </div>
-                <section className="mt-16">
-
-                    <div className="grid grid-cols-12 gap-10">
-
-                        {projects.map((project, index) => {
-
-                            const item = layout[index % layout.length];
-
-                            return (
-                                <article
-                                    key={project.id}
-                                    className={item.col}
-                                >
-
-                                    <div
-                                        className={`relative w-full ${item.height} bg-[#111111] overflow-hidden group cursor-pointer`}
-                                    >
-                                       
-
-                                        <div className="absolute inset-0 bg-black/0 duration-500 group-hover:bg-black/20" />
-                                    </div>
-
-                                    <div className="flex justify-between items-center mt-5">
-
-                                        
-
-                                    </div>
-
-                                </article>
-                            );
-
-                        })}
-
-                    </div>
-
-                </section>
             </section>
+            <section className="relative w-full px-5">
+
+            {/* PROJECTS AREA */}
+            <div className="relative w-full min-h-[200vh] z-50">
+
+                {projects.map((project) => (
+                    <article
+                        key={project.id}
+                        className={`
+                            absolute
+                            ${positions[project.position]}
+                            group
+                            cursor-pointer
+                        `}
+                    >
+
+                        {/* IMAGE / VIDEO */}
+                        <div
+                            className="
+                                relative
+                                w-full
+                                h-full
+                                overflow-hidden
+                                rounded-[8px]
+                                bg-[#212121]
+                            "
+                        >
+                            {project.type === "video" ? (
+                                <video
+                                    src={project.src}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                />
+                            ) : (
+                                <Image
+                                    src={project.src}
+                                    alt=""
+                                    fill
+                                    className="object-cover"
+                                />
+                            )}
+
+                            {/* HOVER */}
+                            <div
+                                className="
+                                    absolute
+                                    inset-0
+                                    bg-black/0
+                                    transition-all
+                                    duration-500
+                                    group-hover:bg-black/20
+                                "
+                            />
+
+                        </div>
+
+                        {/* INFO */}
+                        <div
+                            className="
+                                flex
+                                justify-between
+                                items-start
+                                mt-4
+                                text-xs
+                            "
+                        >
+                            <div>
+                                <p className="font-medium">
+                                    {project.title}
+                                </p>
+
+                                <p className="opacity-50">
+                                    {project.category}
+                                </p>
+                            </div>
+
+                            <span className="opacity-50">
+                                {project.year}
+                            </span>
+                        </div>
+
+                    </article>
+                ))}
+
+            </div>
+
+        </section>
         </>
     )
 }

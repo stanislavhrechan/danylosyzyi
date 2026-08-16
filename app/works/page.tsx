@@ -4,9 +4,7 @@ import CommitMe from "../components/CommitMe";
 export default function Works() {
   return (
     <>
-    <HeroWorks/>
     <AllProjects/>
-    <CommitMe/>
     </>
   );
 }

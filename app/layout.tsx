@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Doto, Space_Mono, Syne } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
-import Footer from "./components/Footer";
 import SmoothScroll from "./components/SmoothScroll";
 
 const doto = Doto({
@@ -40,11 +39,10 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <Header></Header>
         <SmoothScroll>
-        <main className="relative z-40 bg-white">
+        <main className="relative z-30 bg-white">
         {children}
         </main>
         </SmoothScroll>
-        <Footer></Footer>
         </body>
     </html>
   );

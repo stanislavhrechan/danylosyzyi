@@ -28,21 +28,19 @@ export default function Header() {
     return (
         <>
         <header>
-            <div className="fixed top-0 left-0 w-full z-50 grid grid-cols-[1fr_3fr_1fr] px-3 mt-5 items-center invert mix-blend-difference ">
+            <div className="fixed top-0 left-0 w-full z-50 grid grid-cols-[1fr_3fr_1fr] px-7 mt-5 items-center invert mix-blend-difference ">
                 <div className="cursor-pointer">
                     <a href="/">
-                        <img src="./images/logo.png" alt="" className="w-16 hover:scale-110 transition-scale duration-250"/>
+                        <img src="./images/logo.svg" alt="" className="w-16 hover:scale-110 transition-scale duration-250"/>
                     </a>
                 </div>
                 <div className="flex gap-40">
-                    <div className="uppercase font-body text-xs"><span>Open (10-6PM)</span></div>
-                    <div className="uppercase font-body text-xs"><span>Salzburg,Austria</span></div>
+                    <div className="uppercase font-body text-[13px]"><span>Open (10-6PM)</span></div>
+                    <div className="uppercase font-body text-[13px]"><span>Salzburg,Austria</span></div>
                 </div>
                 <div className="">
-                    <nav className="flex gap-2 uppercase font-body text-xs ">
+                    <nav className="flex gap-2 uppercase font-body text-[13px]">
                         <NavLink href="/">Home</NavLink>
-                        <span>/</span>
-                        <NavLink href="/works">Works</NavLink>
                         <span>/</span>
                         <NavLink href="/about">About</NavLink>
                         <span>/</span>

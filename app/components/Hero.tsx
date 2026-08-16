@@ -2,7 +2,7 @@ import Image from "next/image"
 export default function Hero() {
     return(
         <>
-            <section className="fixed top-0 left-0 w-full min-h-screen px-5 pt-18 z-10 bg-white">
+            <section className="fixed top-0 left-0 w-full min-h-screen px-10 pt-18 z-20 bg-[#F2EFE8]">
                 <div className="grid grid-cols-4 gap-16 items-start">
                     <div className="flex flex-col max-w-[260px]">
                         <span className="font-accent text-base font-black uppercase tracking-wider">
@@ -53,7 +53,7 @@ export default function Hero() {
                     </div>
 
                 </div>
-                <div className="relative h-[60vh] mt-5">
+                <div className="relative h-[55vh] mt-5">
                     <Image
                         src="/images/hero_bg.png"
                         fill
@@ -62,8 +62,8 @@ export default function Hero() {
                     />
                    
                 </div>
-                <div className="leading-[0.8] mt-10">
-                    <h1 className="font-heading uppercase font-bold text-[calc(var(--index)*4.2)]">CrissCrossProduction</h1>
+                <div className="">
+                    <h1 className="font-heading uppercase font-bold text-[calc(var(--index)*4.14)]">CrissCrossProduction</h1>
                 </div>
             </section>
         </>

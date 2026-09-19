@@ -7,7 +7,7 @@ interface NavLinkProps {
 }
 export default function Header() {
     const pathname = usePathname();
-   const NavLink = ({ href, children }: NavLinkProps) => {
+    const NavLink = ({ href, children }: NavLinkProps) => {
         const isActive = pathname === href;
 
     return (
@@ -27,11 +27,11 @@ export default function Header() {
 };
     return (
         <>
-        <header>
-            <div className="fixed top-0 left-0 w-full z-50 grid grid-cols-[1fr_3fr_1fr] px-7 mt-5 items-center invert mix-blend-difference ">
+        <header className="hidden md:block">
+            <div className="fixed top-0 left-0 w-full z-50 grid grid-cols-[1fr_3fr_1fr] px-5 items-center invert mix-blend-difference ">
                 <div className="cursor-pointer">
                     <a href="/">
-                        <img src="./images/logo.svg" alt="" className="w-16 hover:scale-110 transition-scale duration-250"/>
+                    <img src="../images/logo_new.png" alt="" className="w-16 "/>
                     </a>
                 </div>
                 <div className="flex gap-40">
@@ -40,7 +40,7 @@ export default function Header() {
                 </div>
                 <div className="">
                     <nav className="flex gap-2 uppercase font-body text-[13px]">
-                        <NavLink href="/">Home</NavLink>
+                        <NavLink href="/"><span>Home</span></NavLink>
                         <span>/</span>
                         <NavLink href="/about">About</NavLink>
                         <span>/</span>

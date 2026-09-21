@@ -6,7 +6,6 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import CommitMe from "./CommitMe";
 import Steps from "./Steps";
 import { useEffect, useRef, useState } from "react";
 
@@ -108,7 +107,6 @@ export default function ParallaxImage() {
     <>
       <section ref={gallery} className="relative h-[120vh] overflow-hidden bg-[#181818] md:h-[175vh]" > {/* ================= MOBILE ================= */} <div className="relative flex h-full gap-[3vw] overflow-hidden p-[3vw] md:hidden"> <Column images={[ images[0], images[1], images[2], images[3], ]} y={mobileY1} className="top-[-15%] w-1/2" /> <Column images={[ images[4], images[5], images[6], images[7], ]} y={mobileY2} className="top-[-30%] w-1/2" /> </div> {/* ================= DESKTOP ================= */} <div className="relative hidden h-full gap-[2vw] overflow-hidden p-[2vw] md:flex"> <Column images={[ images[0], images[1], images[2], images[3], ]} y={y1} className="top-[-45%] w-1/4" /> <Column images={[ images[4], images[5], images[6], images[7], ]} y={y2} className="top-[-95%] w-1/4" /> <Column images={[ images[8], images[9], images[10], images[11], ]} y={y3} className="top-[-45%] w-1/4" /> <Column images={[ images[12], images[13], images[14], images[15], ]} y={y4} className="top-[-75%] w-1/4" /> </div> </section>
       <Steps />
-      <CommitMe />
     </>
   );
 }

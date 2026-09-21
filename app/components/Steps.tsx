@@ -8,18 +8,21 @@ const steps = [
         label: "DISCOVER",
         title: "Find the idea.",
         text: "We look deeper than the brief. Understanding the brand, the people and the feeling behind the project.",
+        video: "/videos/steps/01-1.mp4"
     },
     {
         number: "02",
         label: "CREATE",
         title: "Build the feeling.",
         text: "Strategy becomes visual language. We shape the idea through design, motion, image and detail.",
+        video: "/videos/steps/02.mp4"
     },
     {
         number: "03",
         label: "DELIVER",
         title: "Make it move.",
         text: "Everything comes together into something ready to live, communicate and make an impact.",
+        video: "/videos/steps/03.mp4"
     },
 ];
 
@@ -63,12 +66,12 @@ export default function Steps() {
                     ( HOW WE WORK )
                 </span>
             </div>
-            <div className="px-5 md:px-0">
+            <div className="px-5 md:px-0 md:ml-[15%]">
                 <AnimatedText
                     className="
-                        md:max-w-[calc(var(--index)*50)]
-                        text-[calc(var(--index)*2.8)]
-                        md:text-[calc(var(--index)*2.9)]
+                        md:max-w-[calc(var(--index)*40)]
+                        text-[calc(var(--index)*2.5)]
+                        md:text-[calc(var(--index)*1.9)]
                         font-medium
                         leading-[1.05]
                         md:leading-[0.94]
@@ -80,6 +83,21 @@ export default function Steps() {
                     , with a sharp eye for detail.
                     <span className="underline">Think of us as your own creative team</span>,
                     with extra firepower when you need it.
+                </AnimatedText>
+
+                <AnimatedText
+                    className="
+                        mt-2
+                        md:mt-5
+                        md:max-w-[calc(var(--index)*30)]
+                        text-[calc(var(--index)*1.7)]
+                        leading-[0.94]
+                        tracking-[-0.04em]
+                        font-heading
+                        md:text-[calc(var(--index)*1.05)]
+                    "
+                >
+                    • We combine strategic thinking, creative craftsmanship and rapid execution to keep ideas moving and momentum growing.
                 </AnimatedText>
             </div>
           
@@ -97,6 +115,7 @@ export default function Steps() {
                             sticky top-0
                             bg-orange-300 py-2
                             px-5 md:px-0
+                            md:border-t-1 md:border-t-black/45
                         `}
                     >
                         <div
@@ -125,10 +144,10 @@ export default function Steps() {
                                     className="
                                         mt-4
                                         max-w-[330px]
-                                        font-body
+                                        font-heading
                                         text-[13px]
                                         leading-[1.3]
-                                        text-[#171717]/65
+                                        text-[#171717]
                                     "
                                 >
                                     {step.text}
@@ -144,15 +163,25 @@ export default function Steps() {
                                     md:w-[800px]
                                 "
                             >
-                                <div
-                                    className={`
-                                        relative
+                                <video
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="
+                                        absolute
+                                        inset-0
+                                        z-20
                                         h-full
                                         w-full
-                                        bg-[#171717]
-                                    `}
+                                        object-cover
+                                    "
                                 >
-                                </div>
+                                    <source
+                                        src={step.video}
+                                        type="video/mp4"
+                                    />
+                                </video>
                             </div>
                         </div>
                     </div>

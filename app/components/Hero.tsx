@@ -1,17 +1,23 @@
+
+
 import Image from "next/image"
+import VisualOverlay from "./VisualOverlay"
+import AnimatedText from "./IntroText"
+import Title from "./Title"
 export default function Hero() {
+
     return(
         <>
-            <section className="fixed top-0 left-0 w-full md:min-h-screen px-5 md:px-5 pt-10 md:pt-18 bg-white">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-16 items-start md:items-start">
+            <section  className="md:fixed md:top-0 md:left-0 w-full md:min-h-screen px-5 md:px-6 pt-10 md:pt-18 bg-white">
+                <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-16 items-start md:items-start">
                     <div className="flex flex-col max-w-[260px]">
                         <span className="font-accent text-base md:text-[calc(var(--index)*0.8)] font-black uppercase tracking-wider">
                             Daniel Syzyi
                         </span>
-                        <p className="font-body text-[calc(var(--index)*1)] md:text-[calc(var(--index)*0.5)]  text-neutral-700">
+                        <AnimatedText className="font-body text-[calc(var(--index)*1)] md:text-[calc(var(--index)*0.5)]  text-neutral-700">
                             <span className="font-bold">CrissCrossProduction</span> is my personal
                             brand created for projects of any type and any difficulty.
-                        </p>
+                        </AnimatedText>
                     </div>
                     <div className="flex justify-center h-full">
                         <svg className="md:w-[15vw] md:h-[15vh]" viewBox="0 0 199 104" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,39 +40,39 @@ export default function Hero() {
                             What I Do
                         </span>
 
-                        <p className="font-body text-xs text-[calc(var(--index)*1)] md:text-[calc(var(--index)*0.5)] text-neutral-700">
+                        <AnimatedText className="font-body text-xs text-[calc(var(--index)*1)] md:text-[calc(var(--index)*0.5)] text-neutral-700">
                             Not only do we create beautiful visual designs that capture viewers'
                             attention, but we also tailor our work to each company's unique
                             identity.
-                        </p>
+                        </AnimatedText>
                     </div>
                     <div className="flex flex-col md:max-w-[260px]">
                         <span className="font-accent text-base md:text-[calc(var(--index)*0.8)] font-black uppercase tracking-wider">
                             Services
                         </span>
                         <ul className="font-body text-xs text-[calc(var(--index)*1)] md:text-[calc(var(--index)*0.5)]  text-neutral-900 space-y-1 underline">
-                            <li>Photo / Video Production</li>
-                            <li>3D Motion Design</li>
-                            <li>Brand Identity</li>
-                            <li>Social Media</li>
+                            <AnimatedText>Photo / Video Production</AnimatedText>
+                            <AnimatedText>3D Motion Design</AnimatedText>
+                            <AnimatedText>Brand Identity</AnimatedText>
+                            <AnimatedText>Social Media</AnimatedText>
                         </ul>
                     </div>
 
                 </div>
-                <div className="relative h-[calc(var(--index)*25)] md:h-[55vh] mt-5">
+                <div className="relative h-[calc(var(--index)*50)] md:h-[55vh] mt-5">
                     <Image
                         src="/images/hero_new.JPG"
                         fill
-                        className="object-cover"
+                        className="object-cover px-3 md:px-1"
                         alt=""
                     />
-                   
+                    <VisualOverlay></VisualOverlay>
                 </div>
                 <div className="hidden md:block">
-                    <h1 className="font-heading uppercase font-bold text-[calc(var(--index)*1.88)] md:text-[calc(var(--index)*4.24)]">CrissCrossProduction</h1>
+                    <Title></Title>
                 </div>
-                <div className="md:hidden block mt-5">
-                    <h1 className="font-heading uppercase font-bold text-[calc(var(--index)*3.6)] leading-[0.94]">
+                <div className="md:hidden block mt-5 pb-5">
+                    <h1 className="font-heading uppercase font-bold text-[calc(var(--index)*3.6)] leading-[0.98]">
                         <span className="block w-fit">
                             CrissCross
                         </span>

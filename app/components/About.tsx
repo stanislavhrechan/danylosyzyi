@@ -69,7 +69,7 @@ export default function About() {
                         leading-[0.98]
                         tracking-[-0.045em]
                         text-[calc(var(--index)*2.6)]
-                        md:text-[calc(var(--index)*2.05)]
+                        md:text-[calc(var(--index)*1.9)]
                         md:leading-[1.05]
                         font-medium
                         font-heading
@@ -207,7 +207,7 @@ export default function About() {
                             md:text-[calc(var(--index)*1.05)]
                         "
                     >
-                        In addition: AI creative tools to improve and accelerate manual
+                        • In addition: AI creative tools to improve and accelerate manual
                         with human-controlled workflow to achieve any desired clients
                         result.
                     </AnimatedText>

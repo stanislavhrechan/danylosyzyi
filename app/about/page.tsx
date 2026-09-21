@@ -1,16 +1,61 @@
+"use client";
+import { useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
 import Info from "../components/AboutPage/Info";
 import Footer from "../components/Footer";
 import CommitMe from "../components/CommitMe";
-export default function About() {
-  return (
-    <>
-    <section className="relative z-30 pb-[calc(var(--index)*42.5)] md:pb-99">
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Contact() {
+    const pageRef = useRef<HTMLDivElement>(null);
+    const contactRef = useRef<HTMLDivElement>(null);
+
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.to(contactRef.current, {
+                yPercent: -50,
+                ease: "none",
+
+                scrollTrigger: {
+                    trigger: pageRef.current,
+
+                    start: "top top",
+                    end: "top+=50% top",
+
+                    scrub: 1,
+                },
+            });
+        }, pageRef);
+
+        return () => ctx.revert();
+    }, []);
+
+    return (
+      <>
         <Info/>
-        <CommitMe></CommitMe>
-    </section>
-    <section className="fixed -bottom-10 left-0 w-full">
-      <Footer/>
-    </section>
-    </>
-  );
+        <section
+            ref={pageRef}
+            className="relative"
+        >
+           
+            <div className="h-[63vh]" />
+
+            <section className="relative z-10">
+                <Footer />
+            </section>
+
+            <section
+                ref={contactRef}
+                className="absolute top-0 left-0 z-20 w-full"
+            >
+                <div className="w-full h-full bg-black">
+                    <CommitMe />
+                </div>
+            </section>
+        </section>
+      </>
+    );
 }

@@ -1,6 +1,6 @@
 import Image from "next/image"
 import AnimatedText from "./IntroText"
-
+import Title from "./Title"
 export default function Footer() {
     return (
         <>

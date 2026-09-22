@@ -1,5 +1,3 @@
-
-
 import Image from "next/image"
 import VisualOverlay from "./VisualOverlay"
 import AnimatedText from "./IntroText"
@@ -63,8 +61,10 @@ export default function Hero() {
                     <Image
                         src="/images/hero_new.JPG"
                         fill
+                        priority
+                        sizes="100vw"
                         className="object-cover px-3 md:px-1"
-                        alt=""
+                        alt="CrissCrossProduction (CCP) visual"
                     />
                     <VisualOverlay></VisualOverlay>
                 </div>

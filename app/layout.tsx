@@ -7,6 +7,7 @@ import SmoothScroll from "./components/SmoothScroll";
 const doto = Doto({
   subsets: ["latin"],
   variable: "--font-doto",
+  weight: ["800"],
 });
 
 const spaceMono = Space_Mono({
@@ -18,7 +19,7 @@ const spaceMono = Space_Mono({
 const syne = Syne({
   subsets: ["latin"],
   variable: "--font-syne",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", '700','800'],
 });
 
 export const metadata: Metadata = {

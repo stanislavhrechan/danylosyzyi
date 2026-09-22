@@ -12,7 +12,7 @@ const projects = [
     id: 1,
     title: "PORSHE",
     tags: "#3D #3D Animation #CGI #Art Direction #Cinema4D #Unreal Engine 5 #Blender #After Effects #Substance Painter #Lightning #Materials #Camera Movement #SFX #Pre Production #Post Production",
-    video: "/videos/project_porshe_new.mp4",
+    video: "/videos/project_porshe_1440_new.webm",
     description: "PORSCHE CGI / Animation is my coursework for university made in 2026. There was no rules/restrictions set fot this project, so I decided to do something I've wanted to do for a long time: create a CGI about cars. Everything from art direction, content architecture, animations, lightning and material flow were fine tuned to help reach goals of the project.",
 
   },
@@ -20,7 +20,7 @@ const projects = [
     id: 2,
     title: "IDEALIST",
     tags: "#Photo shooting #Commercial #Marketing #Social Media #Promotion #Content",
-    video: "/videos/project_idealist_new.mp4",
+    video: "/videos/project_idealist_1440_new.webm",
     description: "Commercial photo shooting for Ukrainian Coffee house called 'Idealist' in the middle of Salzburg city. Content promotion in Social Media such as Instagramm posts and stories and Facebook.",
 
   },

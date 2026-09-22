@@ -238,7 +238,7 @@ export default function About() {
                         "
                     >
                         <source
-                            src="/videos/project_idealist.mp4"
+                            src="/videos/project_idealist_720.webm"
                             type="video/mp4"
                         />
                     </video>

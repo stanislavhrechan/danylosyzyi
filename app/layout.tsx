@@ -8,18 +8,24 @@ const doto = Doto({
   subsets: ["latin"],
   variable: "--font-doto",
   weight: ["800"],
+  display: "block",
+  preload: true,
 });
 
 const spaceMono = Space_Mono({
   subsets: ["latin"],
   variable: "--font-space-mono",
   weight: ["400", "700"],
+  display: "block",
+  preload: true,
 });
 
 const syne = Syne({
   subsets: ["latin"],
   variable: "--font-syne",
   weight: ["400", "500", "600", '700','800'],
+  display: "block",
+  preload: true,
 });
 
 export const metadata: Metadata = {

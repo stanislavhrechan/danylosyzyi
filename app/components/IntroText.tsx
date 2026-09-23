@@ -237,20 +237,20 @@ export default function AnimatedText({
 
         resizeObserver.observe(container);
 
-        window.addEventListener(
-            "resize",
-            calculateLines
-        );
+        // window.addEventListener(
+        //     "resize",
+        //     calculateLines
+        // );
 
         return () => {
             cancelled = true;
 
             resizeObserver.disconnect();
 
-            window.removeEventListener(
-                "resize",
-                calculateLines
-            );
+            // window.removeEventListener(
+            //     "resize",
+            //     calculateLines
+            // );
         };
     }, [children]);
 

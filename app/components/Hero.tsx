@@ -59,7 +59,7 @@ export default function Hero() {
                 </div>
                 <div className="relative h-[calc(var(--index)*50)] md:h-[55vh] mt-5">
                     <Image
-                        src="/images/hero_new.JPG"
+                        src="/images/hero_new.webp"
                         fill
                         priority
                         sizes="100vw"

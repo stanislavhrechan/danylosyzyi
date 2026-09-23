@@ -8,21 +8,21 @@ const steps = [
         label: "DISCOVER",
         title: "Find the idea.",
         text: "We look deeper than the brief. Understanding the brand, the people and the feeling behind the project.",
-        video: "/videos/steps/01-1.mp4"
+        video: "/videos/steps/01.webm"
     },
     {
         number: "02",
         label: "CREATE",
         title: "Build the feeling.",
         text: "Strategy becomes visual language. We shape the idea through design, motion, image and detail.",
-        video: "/videos/steps/02.mp4"
+        video: "/videos/steps/02.webm"
     },
     {
         number: "03",
         label: "DELIVER",
         title: "Make it move.",
         text: "Everything comes together into something ready to live, communicate and make an impact.",
-        video: "/videos/steps/03.mp4"
+        video: "/videos/steps/03.webm"
     },
 ];
 
@@ -66,7 +66,7 @@ export default function Steps() {
                     ( HOW WE WORK )
                 </span>
             </div>
-            <div className="px-5 md:px-0 md:ml-[15%]">
+            <div className="px-5 md:px-0 md:ml-[13%]">
                 <AnimatedText
                     className="
                         md:max-w-[calc(var(--index)*40)]

@@ -31,7 +31,7 @@ export default function Header() {
             <div className="fixed top-0 left-0 w-full z-50 grid grid-cols-[1fr_3fr_1fr] px-5 items-center invert mix-blend-difference ">
                 <div className="cursor-pointer">
                     <a href="/">
-                    <img src="../images/logo_new.png" alt="" className="w-16 "/>
+                    <img src="../images/logo_new.webp" alt="" className="w-16 "/>
                     </a>
                 </div>
                 <div className="flex gap-40">

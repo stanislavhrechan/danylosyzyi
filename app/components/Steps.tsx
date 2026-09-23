@@ -2,6 +2,58 @@
 
 import Link from "next/link";
 import AnimatedText from "./IntroText";
+import { useEffect, useRef } from "react";
+
+function LazyVideo({ src }: { src: string }) {
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        const video = videoRef.current;
+
+        if (!video) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    video.play().catch(() => {});
+                } else {
+                    video.pause();
+                }
+            },
+            {
+                rootMargin: "300px",
+            }
+        );
+
+        observer.observe(video);
+
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+        <video
+            ref={videoRef}
+            muted
+            loop
+            playsInline
+            preload="none"
+            className="
+                absolute
+                inset-0
+                z-20
+                h-full
+                w-full
+                object-cover
+            "
+        >
+            <source
+                src={src}
+                type="video/webm"
+            />
+        </video>
+    );
+}
+
 const steps = [
     {
         number: "01",
@@ -27,6 +79,7 @@ const steps = [
 ];
 
 export default function Steps() {
+    
     return (
         <section
             className="
@@ -163,25 +216,7 @@ export default function Steps() {
                                     md:w-[800px]
                                 "
                             >
-                                <video
-                                    autoPlay
-                                    muted
-                                    loop
-                                    playsInline
-                                    className="
-                                        absolute
-                                        inset-0
-                                        z-20
-                                        h-full
-                                        w-full
-                                        object-cover
-                                    "
-                                >
-                                    <source
-                                        src={step.video}
-                                        type="video/mp4"
-                                    />
-                                </video>
+                                <LazyVideo src={step.video} />
                             </div>
                         </div>
                     </div>

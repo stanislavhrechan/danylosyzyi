@@ -7,6 +7,57 @@ import ParallaxImage from "./ParallaxGallery";
 
 gsap.registerPlugin(ScrollTrigger);
 
+
+function LazyProjectVideo({ src }: { src: string }) {
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    useLayoutEffect(() => {
+        const video = videoRef.current;
+
+        if (!video) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    video.play().catch(() => {});
+                } else {
+                    video.pause();
+                }
+            },
+            {
+                rootMargin: "300px",
+            }
+        );
+
+        observer.observe(video);
+
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+        <video
+            ref={videoRef}
+            muted
+            loop
+            playsInline
+            preload="none"
+            className="
+                absolute
+                inset-0
+                z-20
+                h-full
+                w-full
+                object-cover
+            "
+        >
+            <source
+                src={src}
+                type="video/webm"
+            />
+        </video>
+    );
+}
+
 const projects = [
   {
     id: 1,
@@ -170,25 +221,7 @@ export default function Projects() {
                 </div>
 
                 {/* VIDEO */}
-                <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="
-                        absolute
-                        inset-0
-                        z-20
-                        h-full
-                        w-full
-                        object-cover
-                    "
-                >
-                    <source
-                        src={project.video}
-                        type="video/mp4"
-                    />
-                </video>
+                <LazyProjectVideo src={project.video} />
 
                 {/* TAGS */}
                 <p

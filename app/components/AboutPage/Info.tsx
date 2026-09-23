@@ -48,7 +48,7 @@ export default function Info() {
                             lg:w-[370px]
                         ">
                             <img
-                                src="/images/about_3d_.JPG"
+                                src="/images/about_3d.webp"
                                 alt=""
                                 className="
                                     block
@@ -206,7 +206,8 @@ export default function Info() {
                         lg:w-[35vw]
                     ">
                         <img
-                            src="/images/me.png"
+                            src="/images/me.webp"
+                            loading="lazy"
                             alt=""
                             className="
                                 block

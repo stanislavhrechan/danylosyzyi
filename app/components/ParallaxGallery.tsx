@@ -142,7 +142,6 @@ function Column({
           <img
             src={src}
             loading="lazy"
-            decoding="async"
             alt=""
             draggable={false}
             className="

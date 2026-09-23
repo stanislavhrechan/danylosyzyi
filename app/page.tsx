@@ -49,7 +49,7 @@ export default function Home() {
           className="relative"
       >
           
-          <div className="h-[74vh]" />
+          <div className="h-[30vh] md:h-[74vh]" />
 
           <section className="relative z-10">
               <Footer />
@@ -57,7 +57,7 @@ export default function Home() {
 
           <section
               ref={contactRef}
-              className="absolute top-0 left-0 z-20 w-full"
+              className="absolute top-0 left-0 z-40 w-full"
           >
               <div className="w-full h-full bg-black">
                   <CommitMe />

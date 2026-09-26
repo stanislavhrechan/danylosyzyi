@@ -225,25 +225,67 @@ export default function Header() {
                 <Link
                     href="/"
                     onClick={() => setMenuOpen(false)}
-                    className="pb-3"
+                    className="pb-3 flex gap-2 items-center"
                 >
                     Home
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                        stroke="currentColor"
+                        className="size-4"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                        />
+                    </svg>
                 </Link>
 
                 <Link
                     href="/about"
                     onClick={() => setMenuOpen(false)}
-                    className="border-t border-black/20 py-3"
+                    className="border-t border-black/20 py-3 flex gap-2 items-center"
                 >
                     About
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                        stroke="currentColor"
+                        className="size-4"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                        />
+                    </svg>
                 </Link>
 
                 <Link
                     href="/contact"
                     onClick={() => setMenuOpen(false)}
-                    className="border-y border-black/20 py-3"
+                    className="border-y border-black/20 py-3 flex gap-2 items-center"
                 >
                     Contact
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                        stroke="currentColor"
+                        className="size-4"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                        />
+                    </svg>
                 </Link>
                 </nav>
             </div>

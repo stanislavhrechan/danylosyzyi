@@ -35,7 +35,7 @@ export default function ContactSection() {
                 bg-white
                 pt-15
                 md:pt-20
-                px-5
+                px-4
                 py-8
                 text-[#171717]
                 md:px-[34px]

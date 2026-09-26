@@ -17,7 +17,7 @@ export default function Header() {
     const isActive = pathname === href;
 
     return (
-      <Link
+      <a
         href={href}
         onClick={() => setMenuOpen(false)}
         className={`
@@ -29,7 +29,7 @@ export default function Header() {
         `}
       >
         {children}
-      </Link>
+      </a>
     );
   };
 
@@ -39,13 +39,13 @@ export default function Header() {
       <header className="hidden md:block">
         <div className="fixed top-0 left-0 w-full z-50 grid grid-cols-[1fr_3fr_1fr] px-5 items-center  mix-blend-difference">
           <div className="cursor-pointer">
-            <Link href="/">
+            <a href="/">
               <img
                 src="/images/logo_new.webp"
                 alt="Logo"
                 className="w-16"
               />
-            </Link>
+            </a>
           </div>
 
           <div className="flex gap-40 invert mix-blend-difference">
@@ -73,13 +73,13 @@ export default function Header() {
         <div className="fixed top-0 left-0 w-full z-[100] px-2">
           {/* TOP BAR */}
           <div className="relative z-[110] flex items-center justify-between">
-            <Link href="/" onClick={() => setMenuOpen(false)}>
+            <a href="/" onClick={() => setMenuOpen(false)}>
               <img
                 src="/images/logo_new.webp"
                 alt="Logo"
                 className="w-16"
               />
-            </Link>
+            </a>
 
             <button
               type="button"
@@ -222,7 +222,7 @@ export default function Header() {
                     }
                 `}
                 >
-                <Link
+                <a
                     href="/"
                     onClick={() => setMenuOpen(false)}
                     className="pb-3 flex gap-2 items-center"
@@ -242,9 +242,9 @@ export default function Header() {
                             d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
                         />
                     </svg>
-                </Link>
+                </a>
 
-                <Link
+                <a
                     href="/about"
                     onClick={() => setMenuOpen(false)}
                     className="border-t border-black/20 py-3 flex gap-2 items-center"
@@ -264,9 +264,9 @@ export default function Header() {
                             d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
                         />
                     </svg>
-                </Link>
+                </a>
 
-                <Link
+                <a
                     href="/contact"
                     onClick={() => setMenuOpen(false)}
                     className="border-y border-black/20 py-3 flex gap-2 items-center"
@@ -286,7 +286,7 @@ export default function Header() {
                             d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
                         />
                     </svg>
-                </Link>
+                </a>
                 </nav>
             </div>
             </div>

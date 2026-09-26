@@ -8,22 +8,28 @@ export default function SmoothScroll({
 }: {
     children: ReactNode;
 }) {
-
     useEffect(() => {
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+        if (isMobile) return;
+
         const lenis = new Lenis({
-            duration: 0.9,
+            duration: 1.1,
             smoothWheel: true,
             wheelMultiplier: 1,
         });
 
+        let rafId: number;
+
         function raf(time: number) {
             lenis.raf(time);
-            requestAnimationFrame(raf);
+            rafId = requestAnimationFrame(raf);
         }
 
-        requestAnimationFrame(raf);
+        rafId = requestAnimationFrame(raf);
 
         return () => {
+            cancelAnimationFrame(rafId);
             lenis.destroy();
         };
     }, []);

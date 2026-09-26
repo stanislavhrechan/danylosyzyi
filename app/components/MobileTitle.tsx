@@ -30,7 +30,7 @@ export default function MobileTitle() {
 
     return (
         <div className="md:hidden block mt-5 pb-5">
-            <h1 className="font-heading uppercase font-bold text-[calc(var(--index)*4)] leading-[0.98]">
+            <h1 className=" uppercase text-[calc(var(--index)*4)]">
                 <span className="block w-fit">
                     {firstText}
                 </span>

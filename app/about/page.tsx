@@ -16,7 +16,7 @@ export default function Contact() {
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             gsap.to(contactRef.current, {
-                yPercent: -50,
+                yPercent: -20,
                 ease: "none",
 
                 scrollTrigger: {
@@ -38,7 +38,7 @@ export default function Contact() {
         <Info/>
         <section
             ref={pageRef}
-            className="relative"
+            className="relative hidden md:block"
         >
            
             <div className="h-[63vh]" />
@@ -55,6 +55,13 @@ export default function Contact() {
                     <CommitMe />
                 </div>
             </section>
+        </section>
+
+        <section
+            className="relative md:hidden block"
+        >
+            <CommitMe />
+            <Footer />
         </section>
       </>
     );

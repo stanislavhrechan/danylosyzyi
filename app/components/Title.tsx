@@ -23,9 +23,20 @@ export default function Title() {
 
     return (
         <div className="hidden md:block">
-            <h1 className="font-heading uppercase font-bold text-[calc(var(--index)*1.88)] md:text-[calc(var(--index)*4.24)]">
+            <h1 className="font-heading uppercase font-bold text-6xl mx-5">
+               
+            </h1>
+            <h1 className="
+                font-heading
+                uppercase
+                font-bold
+                text-[calc(var(--index)*4.2)]
+                max-md:text-[13vw]
+                max-md:leading-[0.9]
+                max-md:tracking-[-0.06em]
+                whitespace-nowrap
+            ">
                 {displayText}
-                <span className="text-orange-300">|</span>
             </h1>
         </div>
     );

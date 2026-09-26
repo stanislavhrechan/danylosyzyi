@@ -41,7 +41,7 @@ export default function Info() {
                         <div className="
                             bg-[#f7f7f7]
                             w-full
-                            max-w-[370px]
+                            max-w-[380px]
 
                             overflow-hidden
 в
@@ -53,7 +53,6 @@ export default function Info() {
                                 className="
                                     block
                                     w-full
-                                    h-[70vh]
                                 "
                             />
                         </div>
@@ -177,13 +176,15 @@ export default function Info() {
 
             <section className="
                 px-5
+                pb-20
                 bg-[#171717]
                 min-h-screen
                 text-orange-300
             ">
                 <div className="
                     relative
-                    pt-20
+                    pt-10
+                    md:pt-20
                     flex
                     flex-col
                     gap-10
@@ -301,8 +302,8 @@ export default function Info() {
                 pt-24
                 pb-15
                 px-5
-                bg-[#171717]
-                text-orange-300
+                bg-orange-300
+                text-[#171717]
 
                 lg:pt-30
             ">

@@ -17,6 +17,8 @@ export default function Footer() {
 
                 {/* DESCRIPTION */}
                 <p className="
+                    pt-0
+                    md:pt-[calc(var(--index)*9)]
                     font-heading
                     leading-[1.2]
                     tracking-[-0.04em]
@@ -81,7 +83,7 @@ export default function Footer() {
                                 break-all
                             "
                         >
-                            danylo.syzyi@gmail.com
+                            syzyidanylo@icloud.com
                         </a>
                     </div>
 
@@ -109,7 +111,7 @@ export default function Footer() {
                             max-md:gap-4
                         ">
                             <a
-                                href=""
+                                href="https://www.instagram.com/jracklooney_o?stkn=dmQ5Z21yemtldmZm"
                                 className="
                                     font-body
                                     underline
@@ -120,7 +122,7 @@ export default function Footer() {
                             </a>
 
                             <a
-                                href=""
+                                href="https://www.linkedin.com/in/danylo-s-ab4324250/"
                                 className="
                                     font-body
                                     underline

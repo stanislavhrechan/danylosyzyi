@@ -33,7 +33,7 @@ export default function ContactSection() {
                 min-h-screen
                 overflow-hidden
                 bg-white
-                pt-10
+                pt-15
                 md:pt-20
                 px-5
                 py-8
@@ -93,13 +93,16 @@ export default function ContactSection() {
                 ">
                     <AnimatedText
                         className="
-                            max-w-[calc(var(--index)*50)]
+                            max-w-[calc(var(--index)*55)]
                             font-heading
-                            text-[calc(var(--index)*2.7)]
+                            text-[calc(var(--index)*2.8)]
+                            md:text-[calc(var(--index)*2.9)]
+                            
                             leading-[1.05]
-                            md:leading-[0.96]
+                            md:leading-[0.94]
                             font-medium
-                            tracking-[-0.065em]
+
+                            tracking-[-0.055em]
                         "
                     >
                         Your move. Whether you&apos;ve got a wild
@@ -116,14 +119,13 @@ export default function ContactSection() {
                 ">
 
                     <AnimatedText className="
-                        max-w-[calc(var(--index)*50)]
+                        max-w-[calc(var(--index)*55)]
                         font-heading
-                        text-[calc(var(--index)*2.8)]
                         text-[calc(var(--index)*2.7)]
                         leading-[1.05]
-                        md:leading-[0.96]
+                        md:leading-[0.94]
                         font-medium
-                        tracking-[-0.06em]
+                        tracking-[-0.055em]
                     ">
                         Drop us a line. Or better yet:
 
@@ -187,47 +189,6 @@ export default function ContactSection() {
                     ">
 
 
-                        {/* -----------------------------------------
-                            WORLD CLOCK
-                        ----------------------------------------- */}
-
-                        <div className="
-                            flex
-                            flex-col
-                            gap-[2px]
-                            font-body
-                            text-[14px]
-                            leading-[1.4]
-                        ">
-
-                            {locations.map(
-                                (location, index) => (
-                                    <div
-                                        key={location.city}
-                                        className="
-                                            flex
-                                            w-full
-                                            max-w-[300px]
-                                            justify-between
-                                            gap-8
-                                        "
-                                    >
-
-                                        <span>
-                                            {location.city} ({location.timezone})
-                                        </span>
-
-                                        <span className="
-                                            tabular-nums
-                                        ">
-                                            {times[index] || "19:47:00"}
-                                        </span>
-
-                                    </div>
-                                )
-                            )}
-
-                        </div>
 
 
                         {/* -----------------------------------------
@@ -242,7 +203,7 @@ export default function ContactSection() {
                         ">
 
                             <span>
-                                How to connect
+                                How to connect:
                             </span>
 
 
@@ -259,9 +220,10 @@ export default function ContactSection() {
                                         transition-opacity
                                         duration-300
                                         hover:opacity-50
+                                        underline
                                     "
                                 >
-                                    danylo.syzyi@gmail.com
+                                    syzyidanylo@icloud.com
                                 </a>
 
                                 <a
@@ -271,6 +233,9 @@ export default function ContactSection() {
                                         transition-opacity
                                         duration-300
                                         hover:opacity-50
+                                        underline
+                                        mt-0
+                                        md:mt-2
                                     "
                                 >
                                     +421 900 000 000
@@ -288,50 +253,51 @@ export default function ContactSection() {
                         <div className="
                             flex
                             gap-2
+                            md:gap-10
                         ">
 
                             <AnimatedButton
-                                href="#"
+                                href="https://www.instagram.com/jracklooney_o?stkn=dmQ5Z21yemtldmZm"
                                 className="
                                     flex
-                                    h-11
-                                    w-11
+                                   
                                     items-center
                                     justify-center
                                     rounded-full
-                                    bg-[#171717]
-                                    font-accent
-                                    text-[10px]
-                                    font-black
-                                    text-white
+                                    text-sm
+                                    underline
+                                    font-body
+                                    underline
+                                    text-sm
+                                    text-black
                                     transition-transform
                                     duration-300
                                     hover:-translate-y-1
                                 "
                             >
-                                IN
+                                Instagram
                             </AnimatedButton>
 
                             <AnimatedButton
-                                href="#"
+                                href="https://www.linkedin.com/in/danylo-s-ab4324250/"
                                 className="
                                     flex
-                                    h-11
-                                    w-11
+                                   
                                     items-center
                                     justify-center
                                     rounded-full
-                                    bg-[#171717]
-                                    font-accent
-                                    text-[10px]
-                                    font-black
-                                    text-white
+                                    text-sm
+                                    underline
+                                    font-body
+                                    underline
+                                    text-sm
+                                    text-black
                                     transition-transform
                                     duration-300
                                     hover:-translate-y-1
                                 "
                             >
-                                IG
+                                Linkedln
                             </AnimatedButton>
 
                         </div>
@@ -499,7 +465,7 @@ export default function ContactSection() {
                             >
 
                                 <span>
-                                    Send message
+                                    Send message ...
                                 </span>
 
                             </button>

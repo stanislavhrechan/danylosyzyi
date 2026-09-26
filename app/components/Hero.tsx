@@ -6,7 +6,7 @@ export default function Hero() {
 
     return(
         <>
-            <section  className="md:fixed md:top-0 md:left-0 w-full md:min-h-screen px-5 md:px-6 pt-10 md:pt-18 bg-white">
+            <section  className="md:fixed md:top-0 md:left-0 w-full md:min-h-screen px-5 md:px-6 pt-10 md:pt-18 bg-white pb-10">
                 <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-16 items-start md:items-start">
                     <div className="flex flex-col max-w-[260px]">
                         <span className="font-accent text-base md:text-[calc(var(--index)*0.8)] font-black uppercase tracking-wider">
@@ -57,22 +57,34 @@ export default function Hero() {
                     </div>
 
                 </div>
-                <div className="relative h-[calc(var(--index)*50)] md:h-[55vh] mt-5">
+                <div className="relative h-[calc(var(--index)*50)] md:h-[55vh] mt-5 overflow-hidden">
                     <Image
                         src="/images/hero_new.webp"
                         fill
                         priority
                         sizes="100vw"
-                        className="object-cover px-3 md:px-1"
+                        className="object-cover md:px-1"
                         alt="CrissCrossProduction (CCP) visual"
                     />
                     <VisualOverlay></VisualOverlay>
                 </div>
-                <div className="hidden md:block">
+                <div className="hidden md:block bg-white">
                     <Title></Title>
                 </div>
-                <div className="md:hidden block mt-5 pb-5">
-                    <h1 className="font-heading uppercase font-bold text-[calc(var(--index)*3.6)] leading-[0.98]">
+                <div className="
+                    mt-5
+                    overflow-hidden
+                    md:hidden
+                ">
+                    <h1 className="
+                        font-heading
+                        uppercase
+                        font-bold
+                        text-[calc(var(--index)*3.8)]
+                        max-md:leading-[0.9]
+                        max-md:tracking-[-0.06em]
+                        whitespace-nowrap
+                    ">
                         <span className="block w-fit">
                             CrissCross
                         </span>

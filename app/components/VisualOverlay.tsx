@@ -24,7 +24,8 @@ export default function VisualOverlay() {
                     trigger: overlayRef.current,
                     start: "top 15%",
                     end: "bottom 10%",
-                    scrub: 1,
+                    scrub: 0.6,
+                    invalidateOnRefresh: true,
                 },
             });
 
@@ -41,7 +42,34 @@ export default function VisualOverlay() {
             });
         }, overlayRef);
 
-        return () => ctx.revert();
+        let resizeTimer: ReturnType<typeof setTimeout>;
+
+        const refresh = () => {
+            clearTimeout(resizeTimer);
+
+            resizeTimer = setTimeout(() => {
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        ScrollTrigger.refresh(true);
+                    });
+                });
+            }, 150);
+        };
+
+        window.addEventListener("resize", refresh);
+        window.addEventListener("orientationchange", refresh);
+
+        // initial
+        refresh();
+
+        return () => {
+            clearTimeout(resizeTimer);
+
+            window.removeEventListener("resize", refresh);
+            window.removeEventListener("orientationchange", refresh);
+
+            ctx.revert();
+        };
     }, []);
 
     return (
@@ -81,7 +109,7 @@ export default function VisualOverlay() {
 
             <div
                 ref={overlayRef}
-                className="visual-overlay absolute w-full -top-5 right-10 md:right-28"
+                className="visual-overlay absolute w-full -top-5 right-[calc(var(--index)*3.6)] md:right-[calc(var(--index)*4.1)]"
             >
                 <div
                     className="w-full md:gap-0 flex justify-between"
@@ -92,92 +120,92 @@ export default function VisualOverlay() {
                     <div className="visual-col shrink-0">
                         <div className="visual-block-one bg-white w-0 h-[calc(var(--index)*35)] md:h-[calc(var(--index)*9.5)]" />
 
-                        <div className="visual-block-two bg-white w-10 md:w-30 h-[10vh] translate-x-[40%]" />
+                        <div className="visual-block-two bg-white w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[60%]" />
 
-                        <div className="visual-block-three bg-white w-10 md:w-30 h-[10vh] translate-x-[80%]" />
+                        <div className="visual-block-three bg-white w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[120%]" />
 
-                        <div className="visual-block-four bg-white w-10 translate-x-[160%] md:w-20 h-[10vh]  md:translate-x-[250%]" />
+                        <div className="visual-block-four bg-white w-[calc(var(--index)*4)] translate-x-[160%] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)]  md:translate-x-[180%]" />
                     </div>
 
                     <div className="visual-col shrink-0">
-                        <div className="visual-block-one bg-white w-10 md:w-[calc(var(--index)*4)] h-[calc(var(--index)*35)] md:h-[calc(var(--index)*9.5)]" />
+                        <div className="visual-block-one bg-white w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*35)] md:h-[calc(var(--index)*9.5)]" />
 
-                        <div className="visual-block-two bg-white w-10 md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[60%]" />
+                        <div className="visual-block-two bg-white w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[60%]" />
 
-                        <div className="visual-block-three bg-white w-10 md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[120%]" />
+                        <div className="visual-block-three bg-white w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[120%]" />
 
-                        <div className="visual-block-four bg-white w-10 md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[180%]" />
+                        <div className="visual-block-four bg-white w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[180%]" />
                     </div>
 
                     <div className="visual-col shrink-0">
-                        <div className="visual-block-one bg-white  w-10 md:w-[calc(var(--index)*4)] h-[calc(var(--index)*35)] md:h-[calc(var(--index)*9.5)]" />
+                        <div className="visual-block-one bg-white  w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*35)] md:h-[calc(var(--index)*9.5)]" />
 
-                        <div className="visual-block-two bg-white w-10 md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[60%]" />
+                        <div className="visual-block-two bg-white w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[60%]" />
 
-                        <div className="visual-block-three bg-white w-10 md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[120%]" />
+                        <div className="visual-block-three bg-white w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[120%]" />
 
-                        <div className="visual-block-four bg-white w-10 md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[180%]" />
+                        <div className="visual-block-four bg-white w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[180%]" />
                     </div>
 
                     <div className="visual-col shrink-0">
-                        <div className="visual-block-one bg-white  w-10 md:w-[calc(var(--index)*4)] h-[calc(var(--index)*35)] md:h-[calc(var(--index)*9.5)]" />
+                        <div className="visual-block-one bg-white  w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*35)] md:h-[calc(var(--index)*9.5)]" />
 
-                        <div className="visual-block-two bg-white w-10 md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[60%]" />
+                        <div className="visual-block-two bg-white w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[60%]" />
 
-                        <div className="visual-block-three bg-white w-10 md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[120%]" />
+                        <div className="visual-block-three bg-white w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[120%]" />
 
-                        <div className="visual-block-four bg-white w-10 md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[180%]" />
+                        <div className="visual-block-four bg-white w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[180%]" />
                     </div>
 
                     <div className="visual-col shrink-0">
-                        <div className="visual-block-one bg-white  w-10 md:w-[calc(var(--index)*4)] h-[calc(var(--index)*35)] md:h-[calc(var(--index)*9.5)]" />
+                        <div className="visual-block-one bg-white  w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*35)] md:h-[calc(var(--index)*9.5)]" />
 
-                        <div className="visual-block-two bg-white w-10 md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[60%]" />
+                        <div className="visual-block-two bg-white w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[60%]" />
 
-                        <div className="visual-block-three bg-white w-10 md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[120%]" />
+                        <div className="visual-block-three bg-white w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[120%]" />
 
-                        <div className="visual-block-four bg-white w-10 md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[180%]" />
+                        <div className="visual-block-four bg-white w-[calc(var(--index)*4)] md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[180%]" />
                     </div>
 
                     <div className="hidden md:block visual-col shrink-0">
                         <div className="visual-block-one bg-white md:w-[calc(var(--index)*4)] md:h-[calc(var(--index)*9.5)]" />
 
-                        <div className="visual-block-two bg-white md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[60%]" />
+                        <div className="visual-block-two bg-white md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[60%]" />
 
-                        <div className="visual-block-three bg-white md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[120%]" />
+                        <div className="visual-block-three bg-white md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[120%]" />
 
-                        <div className="visual-block-four bg-white md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[180%]" />
+                        <div className="visual-block-four bg-white md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[180%]" />
                     </div>
 
 
                     <div className="hidden md:block visual-col shrink-0">
                         <div className="visual-block-one bg-white md:w-[calc(var(--index)*4)] md:h-[calc(var(--index)*9.5)]" />
 
-                        <div className="visual-block-two bg-white md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[60%]" />
+                        <div className="visual-block-two bg-white md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[60%]" />
 
-                        <div className="visual-block-three bg-white md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[120%]" />
+                        <div className="visual-block-three bg-white md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[120%]" />
 
-                        <div className="visual-block-four bg-white md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[180%]" />
+                        <div className="visual-block-four bg-white md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[180%]" />
                     </div>
 
                     <div className="hidden md:block visual-col shrink-0">
                         <div className="visual-block-one bg-white md:w-[calc(var(--index)*4)] md:h-[calc(var(--index)*9.5)]" />
 
-                        <div className="visual-block-two bg-white md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[60%]" />
+                        <div className="visual-block-two bg-white md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[60%]" />
 
-                        <div className="visual-block-three bg-white md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[120%]" />
+                        <div className="visual-block-three bg-white md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[120%]" />
 
-                        <div className="visual-block-four bg-white md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[180%]" />
+                        <div className="visual-block-four bg-white md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[180%]" />
                     </div>
 
                     <div className="hidden md:block visual-col shrink-0">
                         <div className="visual-block-one bg-white md:w-[calc(var(--index)*4)] md:h-[calc(var(--index)*9.5)]" />
 
-                        <div className="visual-block-two bg-white md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[60%]" />
+                        <div className="visual-block-two bg-white md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[60%]" />
 
-                        <div className="visual-block-three bg-white md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[120%]" />
+                        <div className="visual-block-three bg-white md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[120%]" />
 
-                        <div className="visual-block-four bg-white md:w-[calc(var(--index)*4)] h-[10vh] translate-x-[180%]" />
+                        <div className="visual-block-four bg-white md:w-[calc(var(--index)*4)] h-[calc(var(--index)*7)] translate-x-[180%]" />
                     </div>
 
                     

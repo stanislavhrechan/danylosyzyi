@@ -8,7 +8,7 @@ export default function Hero() {
         <>
             <section  className="md:fixed md:top-0 md:left-0 w-full md:min-h-screen px-5 md:px-6 pt-10 md:pt-18 bg-white pb-10">
                 <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-16 items-start md:items-start">
-                    <div className="flex flex-col max-w-[260px]">
+                    <div className="flex flex-col max-w-[calc(var(--index)*11.5)]">
                         <span className="font-accent text-base md:text-[calc(var(--index)*0.8)] font-black uppercase tracking-wider">
                             Daniel Syzyi
                         </span>
@@ -33,7 +33,7 @@ export default function Hero() {
                         </svg>
 
                     </div>
-                    <div className="flex flex-col md:max-w-[260px]">
+                    <div className="flex flex-col max-w-[calc(var(--index)*11.5)]">
                         <span className="font-accent text-base md:text-[calc(var(--index)*0.8)] font-black uppercase tracking-wider">
                             What I Do
                         </span>
@@ -44,7 +44,7 @@ export default function Hero() {
                             identity.
                         </AnimatedText>
                     </div>
-                    <div className="flex flex-col md:max-w-[260px]">
+                    <div className="flex flex-col max-w-[calc(var(--index)*11.5)]">
                         <span className="font-accent text-base md:text-[calc(var(--index)*0.8)] font-black uppercase tracking-wider">
                             Services
                         </span>

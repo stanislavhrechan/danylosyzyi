@@ -109,7 +109,7 @@ export default function VisualOverlay() {
 
             <div
                 ref={overlayRef}
-                className="visual-overlay absolute w-full -top-5 right-[calc(var(--index)*3.6)] md:right-[calc(var(--index)*4.1)]"
+                className="visual-overlay absolute w-full -top-5 right-[calc(var(--index)*3.6)] md:right-[calc(var(--index)*3)]"
             >
                 <div
                     className="w-full md:gap-0 flex justify-between"

@@ -1,5 +1,6 @@
 import Image from "next/image"
 import AnimatedText from "../IntroText"
+import Model3D from "../Model3D"
 
 export default function Info() {
     return(
@@ -206,16 +207,7 @@ export default function Info() {
 
                         lg:w-[35vw]
                     ">
-                        <img
-                            src="/images/me.webp"
-                            loading="lazy"
-                            alt=""
-                            className="
-                                block
-                                w-full
-                                h-auto
-                            "
-                        />
+                        <Model3D></Model3D>
                     </div>
 
 

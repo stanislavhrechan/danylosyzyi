@@ -57,7 +57,7 @@ export default function Hero() {
                     </div>
 
                 </div>
-                <div className="relative h-[calc(var(--index)*50)] md:h-[55vh] mt-5 overflow-hidden">
+                <div className="relative h-[calc(var(--index)*50)] md:h-[57vh] mt-5 overflow-hidden">
                     <Image
                         src="/images/hero_new.webp"
                         fill

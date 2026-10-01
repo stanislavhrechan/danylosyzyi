@@ -42,11 +42,10 @@ export default function Info() {
                         <div className="
                             bg-[#f7f7f7]
                             w-full
-                            max-w-[380px]
 
                             overflow-hidden
 в
-                            lg:w-[370px]
+                            lg:max-w-[calc(var(--index)*14)]
                         ">
                             <img
                                 src="/images/about_3d.webp"
@@ -66,7 +65,7 @@ export default function Info() {
                         flex
                         flex-col
                         gap-5
-                        max-w-[1100px]
+                        md:max-w-[calc(var(--index)*50)]
                         flex-1
                         min-w-0
                     ">
@@ -90,6 +89,7 @@ export default function Info() {
                             font-heading
 
                             text-[calc(var(--index)*2.8)]
+                            md:text-[calc(var(--index)*2.9)]
 
                             lg:text-6xl
                             xl:text-7xl
@@ -120,7 +120,7 @@ export default function Info() {
 
                             <div>
                                 <AnimatedText className="
-                                    max-w-[800px]
+                                    max-w-[calc(var(--index)*35)]
                                     text-lg
                                     leading-[1.08]
                                     tracking-[-0.025em]
@@ -128,7 +128,7 @@ export default function Info() {
 
                                     sm:text-xl
 
-                                    lg:text-2xl
+                                    lg:text-[calc(var(--index)*0.9)]
                                     lg:leading-[1.15]
                                     lg:tracking-[-0.03em]
                                 ">
@@ -142,7 +142,7 @@ export default function Info() {
 
                             <div>
                                 <AnimatedText className="
-                                    max-w-[800px]
+                                    max-w-[calc(var(--index)*35)]
                                     text-lg
                                     leading-[1.08]
                                     tracking-[-0.025em]
@@ -150,7 +150,7 @@ export default function Info() {
 
                                     sm:text-xl
 
-                                    lg:text-2xl
+                                    lg:text-[calc(var(--index)*0.9)]
                                     lg:leading-[1.15]
                                     lg:tracking-[-0.03em]
                                 ">
@@ -198,7 +198,6 @@ export default function Info() {
                 ">
 
 
-                    {/* IMAGE */}
 
                     <div className="
                         w-full
@@ -215,7 +214,6 @@ export default function Info() {
 
                     <div className="
                         hidden
-
                         lg:absolute
                         lg:bottom-0
                         lg:left-140
@@ -247,18 +245,16 @@ export default function Info() {
                         pt-1
                         w-full
 
-                        sm:max-w-[600px]
-
                         lg:mr-30
                         lg:w-auto
-                        lg:max-w-[520px]
+                        lg:max-w-[calc(var(--index)*25)]
                     ">
                         <p className="
-                            text-lg
+                            lg:text-[calc(var(--index)*0.8))]
                             leading-[1.05]
                             tracking-[-0.015em]
                             font-heading
-                            max-w-[520px]
+                            lg:max-w-[calc(var(--index)*25)]
                         ">
                             Right now,{" "}
                             <span className="underline">
@@ -300,19 +296,16 @@ export default function Info() {
                 lg:pt-30
             ">
                 <h2 className="
-                    text-3xl
+                    text-[calc(var(--index)*2.8)]
+                    md:text-[calc(var(--index)*2.9)]
                     text-center
-                    max-w-5xl
+                    max-w-[calc(var(--index)*45)]
                     mx-auto
                     font-medium
                     leading-[0.98]
                     tracking-[-0.05em]
                     font-heading
 
-                    sm:text-4xl
-
-                    lg:text-4xl
-                    xl:text-6xl
                 ">
                     We design change-making and experiences that finally reflect
                     what you've actually built. For established brands whose

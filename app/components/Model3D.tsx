@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 
 function Model() {
-    const { scene } = useGLTF("/3d/CCP_kubik.gltf");
+    const { scene } = useGLTF("/3d/CCP_kubik_1 (2).gltf");
 
     return (
         <primitive

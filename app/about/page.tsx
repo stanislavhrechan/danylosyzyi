@@ -41,7 +41,7 @@ export default function Contact() {
             className="relative hidden md:block"
         >
            
-            <div className="h-[60vh]" />
+            <div className="h-[55vh]" />
 
             <section className="relative z-10">
                 <Footer />

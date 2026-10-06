@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Doto, Space_Mono, Syne } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
@@ -30,7 +30,9 @@ const syne = Syne({
 
 export const metadata: Metadata = {
   title: "CrissCrossProduction (Danylo (Daniel) Syzyi)",
-  description: "Daniel Syzyi. CrissCrossProduction is my personal brand created for projects of any type and any difficulty. I do not only do we create beautiful visual designs that capture viewers attetion, but we also tailor our work to each company's unique identity.",
+  description:
+    "Daniel Syzyi. CrissCrossProduction is my personal brand created for projects of any type and any difficulty. I do not only do we create beautiful visual designs that capture viewers attetion, but we also tailor our work to each company's unique identity.",
+
   keywords: [
     "CrissCrossProduction",
     "Danylo Syzyi",
@@ -46,16 +48,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CrissCrossProduction (Danylo (Daniel) Syzyi)",
     description:
-      "Daniel Syzyi. CrissCrossProduction is my personal brand created for projects of any type and any difficulty. I do not only do we create beautiful visual designs that capture viewers attetion, but we also tailor our work to each company's unique identity",
-
+      "Daniel Syzyi. CrissCrossProduction is my personal brand created for projects of any type and any difficulty. I do not only do we create beautiful visual designs that capture viewers attetion, but we also tailor our work to each company's unique identity.",
     type: "website",
     locale: "en_US",
     siteName: "CrissCrossProduction",
   },
-
-  viewport: "width=device-width, initial-scale=1",
-
-  themeColor: "#FFB74D",
 
   robots: {
     index: true,
@@ -69,6 +66,12 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#FFB74D",
 };
 
 export default function RootLayout({

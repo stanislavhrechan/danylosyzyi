@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
+
 import Link from "next/link";
 import AnimatedText from "./IntroText";
 import AnimatedButton from "./AnimatedButton";
@@ -22,7 +23,7 @@ const locations = [
 export default function ContactSection() {
 
     const [times, setTimes] = useState([]);
-
+    const [loading, setLoading] = useState(false); const [status, setStatus] = useState(""); async function handleSubmit(e: FormEvent<HTMLFormElement>) { e.preventDefault(); setLoading(true); setStatus(""); const form = e.currentTarget; const formData = new FormData(form); const data = { name: formData.get("name"), email: formData.get("email"), message: formData.get("message"), }; try { const response = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json", }, body: JSON.stringify(data), }); const result = await response.json(); if (!response.ok) { throw new Error(result.error || "Something went wrong."); } setStatus("Message sent successfully."); form.reset(); } catch (error) { setStatus( error instanceof Error ? error.message : "Something went wrong." ); } finally { setLoading(false); } }
     
 
     return (
@@ -223,7 +224,7 @@ export default function ContactSection() {
                                         underline
                                     "
                                 >
-                                    syzyidanylo@icloud.com
+                                    crisscrossprod.office@gmail.com
                                 </a>
 
                                 <a
@@ -238,7 +239,7 @@ export default function ContactSection() {
                                         md:mt-2
                                     "
                                 >
-                                    +421 900 000 000
+                                    +4367761619503
                                 </a>
 
                             </div>
@@ -324,6 +325,7 @@ export default function ContactSection() {
 
 
                         <form
+                            onSubmit={handleSubmit}
                             className="
                                 flex
                                 flex-col
@@ -344,6 +346,7 @@ export default function ContactSection() {
                             ">
 
                                 <input
+                                    name="name"
                                     type="text"
                                     placeholder="Name"
                                     className="
@@ -379,6 +382,7 @@ export default function ContactSection() {
                             ">
 
                                 <input
+                                    name="email"
                                     type="email"
                                     placeholder="Email address"
                                     className="
@@ -414,6 +418,7 @@ export default function ContactSection() {
                             ">
 
                                 <textarea
+                                    name="message"
                                     placeholder="Your message"
                                     className="
                                         min-h-[160px]
@@ -442,7 +447,7 @@ export default function ContactSection() {
                             ----------------------------------------- */}
 
                             <button
-                                type="button"
+                                type="submit" disabled={loading}
                                 className="
                                     group
                                     mt-7
@@ -461,11 +466,12 @@ export default function ContactSection() {
                                     uppercase
                                     tracking-[0.05em]
                                     text-white
+                                    cursor-pointer
                                 "
                             >
 
                                 <span>
-                                    Send message ...
+                                    {loading ? "Sending ..." : "Send message ..."}
                                 </span>
 
                             </button>

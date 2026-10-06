@@ -71,7 +71,7 @@ export default function Footer() {
                                 max-md:text-[17px]
                             "
                         >
-                            +44 (0)20 3012312
+                            +4367761619503
                         </a>
 
                         <a
@@ -83,7 +83,7 @@ export default function Footer() {
                                 break-all
                             "
                         >
-                            syzyidanylo@icloud.com
+                            crisscrossprod.office@gmail.com
                         </a>
                     </div>
 

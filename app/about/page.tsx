@@ -32,7 +32,6 @@ export default function Contact() {
 
         return () => ctx.revert();
     }, []);
-
     return (
       <>
         <Info/>
@@ -41,7 +40,8 @@ export default function Contact() {
             className="relative hidden md:block"
         >
            
-            <div className="h-[55vh]" />
+            <div className="h-[55vh]">
+            </div>
 
             <section className="relative z-10">
                 <Footer />
@@ -49,13 +49,14 @@ export default function Contact() {
 
             <section
                 ref={contactRef}
-                className="absolute top-0 left-0 z-20 w-full"
+                className="absolute top-0 left-0 z-50 w-full"
             >
                 <div className="w-full h-full bg-black">
                     <CommitMe />
                 </div>
             </section>
         </section>
+
 
         <section
             className="relative md:hidden block"

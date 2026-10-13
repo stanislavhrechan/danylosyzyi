@@ -68,8 +68,8 @@ export default function Hero() {
                     />
                     <VisualOverlay></VisualOverlay>
                 </div>
-                <div className="hidden md:block bg-white">
-                    <Title></Title>
+                <div className="hidden md:block bg-white mt-5">
+                    <Title/>
                 </div>
                 <div className="
                     mt-5

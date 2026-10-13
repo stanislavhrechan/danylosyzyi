@@ -88,7 +88,7 @@ export default function RootLayout({
         <Header></Header>
         <SmoothScroll>
         <main className="relative z-30 bg-white">
-        {children}
+          {children}
         </main>
         </SmoothScroll>
         </body>

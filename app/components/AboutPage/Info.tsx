@@ -12,7 +12,7 @@ export default function Info() {
 
             <section className="
                 px-5
-                pb-10
+                pb-40
                 pt-16
                 bg-[#171717]
                 min-h-screen
@@ -170,6 +170,45 @@ export default function Info() {
 
             </section>
 
+            {/* =========================
+                SECTION 03
+            ========================= */}
+
+            <section className="
+                pt-24
+                pb-15
+                px-5
+                bg-orange-300
+                text-[#171717]
+
+                lg:pt-30
+            ">
+                <h2 className="
+                    text-[calc(var(--index)*2.8)]
+                    md:text-[calc(var(--index)*2.9)]
+                    text-center
+                    max-w-[calc(var(--index)*45)]
+                    mx-auto
+                    font-medium
+                    leading-[0.98]
+                    tracking-[-0.05em]
+                    font-heading
+
+                ">
+                    We design change-making and experiences that finally reflect
+                    what you've actually built. For established brands whose
+                    reputation has outgrown their digital presence.
+                </h2>
+
+                <p className="
+                    text-center
+                    mt-5
+                    text-sm
+                ">
+                    Daniel Syzyi
+                </p>
+            </section>
+
 
             {/* =========================
                 SECTION 02
@@ -282,44 +321,7 @@ export default function Info() {
             </section>
 
 
-            {/* =========================
-                SECTION 03
-            ========================= */}
-
-            <section className="
-                pt-24
-                pb-15
-                px-5
-                bg-orange-300
-                text-[#171717]
-
-                lg:pt-30
-            ">
-                <h2 className="
-                    text-[calc(var(--index)*2.8)]
-                    md:text-[calc(var(--index)*2.9)]
-                    text-center
-                    max-w-[calc(var(--index)*45)]
-                    mx-auto
-                    font-medium
-                    leading-[0.98]
-                    tracking-[-0.05em]
-                    font-heading
-
-                ">
-                    We design change-making and experiences that finally reflect
-                    what you've actually built. For established brands whose
-                    reputation has outgrown their digital presence.
-                </h2>
-
-                <p className="
-                    text-center
-                    mt-5
-                    text-sm
-                ">
-                    Daniel Syzyi
-                </p>
-            </section>
+            
 
         </>
     )

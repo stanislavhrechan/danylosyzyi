@@ -16,14 +16,14 @@ export default function Contact() {
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
             gsap.to(contactRef.current, {
-                yPercent: -20,
+                yPercent: -30,
                 ease: "none",
 
                 scrollTrigger: {
                     trigger: pageRef.current,
 
                     start: "top top",
-                    end: "top+=50% top",
+                    end: "top+=80% top",
 
                     scrub: 1,
                 },
@@ -40,7 +40,7 @@ export default function Contact() {
             className="relative hidden md:block"
         >
            
-           <div className="h-[90vh]" />
+           <div className="h-[50vh] mb-60" />
 
             <section className="relative z-10">
                 <Footer />

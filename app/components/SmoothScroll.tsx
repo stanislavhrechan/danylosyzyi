@@ -16,7 +16,7 @@ export default function SmoothScroll({
         const lenis = new Lenis({
             duration: 1.1,
             smoothWheel: true,
-            wheelMultiplier: 0.5,
+            wheelMultiplier: 0.8,
         });
 
         let rafId: number;
